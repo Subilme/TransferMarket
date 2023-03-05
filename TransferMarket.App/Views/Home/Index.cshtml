@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Game>
+@{
+    ViewBag.Title = "Главная";
+}
+
+@if (Model.Any())
+{
+    @foreach (var game in Model)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td width="40%">
+                        <a asp-controller="Team" asp-action="Details" asp-route-id="@game.HomeTeam.Id">@game.HomeTeam.Name</a>
+                    </td>
+                    <td width="20%">
+                        @(game.ScoredGoals.ToList().FindAll(x => x.PlayerScored.TeamId == game.HomeTeamId).Count) - @(game.ScoredGoals.ToList().FindAll(x => x.PlayerScored.TeamId == game.GuestTeamId).Count)
+                    </td>
+                    <td width="40%">
+                        <a asp-controller="Team" asp-action="Details" asp-route-id="@game.GuestTeam.Id">@game.GuestTeam.Name</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    }
+}
+else
+{
+    <p>Матчи отсутствуют</p>
+}

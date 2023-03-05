@@ -1,0 +1,86 @@
+﻿@model PlayerViewModel
+@{
+    ViewData["Title"] = $"{Model.Name} - профиль игрока";
+}
+
+<h1>@Model.Name</h1>
+
+<div>
+    <h4>Статистика Игрока</h4>
+    <hr />
+    <dl class="row">
+        @{
+            //int goals = 0, yellowCards = 0, redCards = 0;
+            //foreach (var game in Model.Item2)
+            //{
+            //    goals += game.ScoredGoals.Select(x => x.PlayerScoredId == Model.Item1.Id).ToList().Count;
+            //    yellowCards += game.Cards.Select(x => x.PlayerId == Model.Item1.Id && (x.CardType.Name == "Желтая" || x.CardType.Name == "Желтая")).ToList().Count;
+            //    redCards += game.Cards.Select(x => x.PlayerId == Model.Item1.Id && x.CardType.Name == "Красная").ToList().Count;
+            //}
+        }
+        <dt class="col-sm-2">
+            Игры
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Games)
+        </dd>
+
+        <dt class="col-sm-2">
+            Голы
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals)
+        </dd>
+
+        <dt class="col-sm-2">
+            Желтые карточки
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YellowCards)
+        </dd>
+
+        <dt class="col-sm-2">
+            Красные карточки
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RedCards)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Данные игрока</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Имя
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            Дата рождения
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                var birthday = Model.Birthday.ToString("d");
+            }
+            @Html.DisplayFor(model => birthday)
+        </dd>
+
+        <dt class="col-sm-2">
+            Амплуа
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Amplification)
+        </dd>
+
+        <dt class="col-sm-2">
+            Нынешний клуб
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Team)
+        </dd>
+    </dl>
+</div>

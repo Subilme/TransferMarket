@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Team>
+@{
+    ViewBag.Title = "Клубы";
+}
+
+<a class="btn btn-dark" asp-action="Create">Создать</a>
+
+<hr />
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Клуб</th>
+                <th>Общая стоимость</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var team in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@team.Id">@team.Name</a>
+                    </td>
+                    <td>@Math.Round(team.TotalCost, 2) млн €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Клубов нет</p>
+}

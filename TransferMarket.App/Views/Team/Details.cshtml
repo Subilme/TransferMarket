@@ -1,0 +1,46 @@
+﻿@model Team
+@{
+    ViewData["Title"] = $"{Model.Name} - профиль клуба";
+}
+
+<h1>@Model.Name</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Общая стоимость
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                var totalCost = Math.Round(Model.TotalCost, 2);
+            }
+            @Html.DisplayFor(model => totalCost) млн €
+        </dd>
+    </dl>
+    <hr />
+</div>
+
+@if (Model.Players.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Дата рождения</th>
+                <th>Стоимость</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in Model.Players.OrderBy(x => x.AmplififcationId))
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Player" asp-action="Details" asp-route-id="@player.Id">@player.Name</a>
+                    </td>
+                    <td>@player.Birthday.ToString("d")</td>
+                    <td>@Math.Round(player.Price, 2) млн €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

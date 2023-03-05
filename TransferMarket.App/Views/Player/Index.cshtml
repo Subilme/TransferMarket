@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Player>
+@{
+    ViewBag.Title = "Игроки";
+}
+
+<a class="btn btn-dark" asp-action="Create">Создать</a>
+
+<hr />
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Имя</th>
+                <th>Клуб</th>
+                <th>Стоимость</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@player.Id" class="text-danger">
+                            <i class="fa fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@player.Id">@player.Name</a>
+                    </td>
+                    <td>@player.Team!.Name</td>
+                    <td>@Math.Round(player.Price, 2) млн €</td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@player.Id">
+                            <i class="fa fa-user-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Игроков нет</p>
+}

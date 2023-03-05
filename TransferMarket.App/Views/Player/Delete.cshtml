@@ -1,0 +1,14 @@
+﻿@model Player
+@{
+    ViewData["Title"] = "Удалить данные";
+}
+
+<h3>Вы дествительно хотите удалить данные об игроке @Model.Name?</h3>
+<hr />
+
+<div>
+    <form asp-action="DeleteConfirm" asp-route-id="@Model.Id">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferMarket.App", "TransferMarket.App\TransferMarket.App.csproj", "{2A672314-8368-4E4D-B147-7AC775764498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferMarket.Data", "TransferMarket.Data\TransferMarket.Data.csproj", "{517FD10A-51A3-4B26-936D-1A61D549DEE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A672314-8368-4E4D-B147-7AC775764498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A672314-8368-4E4D-B147-7AC775764498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A672314-8368-4E4D-B147-7AC775764498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A672314-8368-4E4D-B147-7AC775764498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{517FD10A-51A3-4B26-936D-1A61D549DEE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517FD10A-51A3-4B26-936D-1A61D549DEE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{517FD10A-51A3-4B26-936D-1A61D549DEE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517FD10A-51A3-4B26-936D-1A61D549DEE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5D68C84-D500-45B7-AFFB-FD374123ED4B}
+	EndGlobalSection
+EndGlobal
